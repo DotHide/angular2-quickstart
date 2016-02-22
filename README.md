@@ -256,6 +256,34 @@ export class TodoItemRender {
 ```
 这里的 toggle 是 EventEmitter 对象，被声明为 Output 后，可以将按钮的 click 事件向上散播成为 todo-list 中该组件的 toggle 事件，其中的 `$event` 就是 TodoItemRender 类中声明的 todo（此 todo 又是来自外部输入），而后再触发 toggle 事件对应的业务逻辑。
 
+## 花絮
+琢磨调用第三方库花了些时间，这里也记录一下。以添加 lodash 库为例，需要经过如下5个步骤：
+
+### Step 1
+`$ npm install lodash --save`
+> 安装后到 `package.json` 文件中查看，如有 loash 再进入下一步
+
+### Step 2
+`$ tsd install lodash`
+> 如果没有 tsd 命令行工具，则先安装 `$ npm install -g tsd`
+
+### Step 3
+在 `index.html` 文件中引用：
+`<script src="node_modules/lodash/lodash.js"></script>`
+
+### Step 4
+在 `System.config()` 中添加 `path`：
+```js
+System.config({
+  paths: {
+    lodash: './node_modules/lodash/lodash.js'
+  }
+});
+```
+
+### Step 5
+在需要使用的地方 `import`：
+`import * as _ from "lodash";`
 
 ## 参考链接
 * [Angular2 5 MIN Quickstart](https://angular.io/docs/ts/latest/quickstart.html)
