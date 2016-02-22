@@ -43,7 +43,7 @@ export class TodoInput {
 ```ts
 @Component({
   selector: 'todo-app',
-  __directives: [TodoInput],__
+  directives: [TodoInput],
   templete: '...'
 })
 ```
@@ -70,7 +70,7 @@ export class TodoModel{
 import {Injectable} from "angular2/core";
 import {TodoModel} from "../models/todo-model";
 
-__@Injectable()__
+@Injectable()
 export class TodoService {
   todos:TodoModel[] = [
     new TodoModel("arm"),
@@ -122,7 +122,7 @@ bootstrap(TodoApp, [TodoService]);
 })
 
 export class TodoInput {
-  __todoItem:TodoModel = new TodoModel();__
+  todoItem:TodoModel = new TodoModel();
   constructor() {}
 }
 ```
@@ -135,7 +135,7 @@ export class TodoInput {
 ...
 @Component({
   selector: 'todo-list',
-  __pipes: [SearchPipe],__
+  pipes: [SearchPipe],
   directives: [TodoItemRender],
   template: `<div>
     <ul>
@@ -173,7 +173,7 @@ export class SearchPipe {
 })
 
 export class SearchPipe {
-  __//增加 term 参数__
+  //增加 term 参数
   transform(items, [term]) {
     // 定义转换逻辑，用于结果输出，这里是筛选出以 s 字符开头的项目
     return value.filter((item) => {
@@ -188,7 +188,7 @@ export class SearchPipe {
 ...
 @Component({
   selector: 'todo-list',
-  __pipes: [SearchPipe],__
+  pipes: [SearchPipe],
   directives: [TodoItemRender],
   template: `<div>
     <ul>
@@ -203,11 +203,11 @@ export class SearchPipe {
 这里我们先看到 search 进行了赋值，我们进一步把这个赋值变为一个输入项（@Input），这也是 Angular2 中特殊用法：
 ```ts
 // todo-list.ts
-import {Component, __Input__} from "angular2/core";
+import {Component, Input} from "angular2/core";
 ...
 @Component({
   selector: 'todo-list',
-  __pipes: [SearchPipe],__
+  pipes: [SearchPipe],
   directives: [TodoItemRender],
   template: `<div>
     <ul>
@@ -220,7 +220,7 @@ import {Component, __Input__} from "angular2/core";
 })
 
 export class TodoList {
-  __@Input() term;__ //定义该项是从外部输入的
+  @Input() term; //定义该项是从外部输入的
   constructor(public todoService: TodoService) {
      
   }
