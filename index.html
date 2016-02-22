@@ -13,6 +13,7 @@
   <script src="node_modules/systemjs/dist/system.src.js"></script>
   <script src="node_modules/rxjs/bundles/Rx.js"></script>
   <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+  <script src="node_modules/lodash/lodash.js"></script>
 
   <!-- 2. Configure SystemJS -->
   <script>
@@ -22,6 +23,9 @@
           format: 'register',
           defaultExtension: 'js'
         }
+      },
+      paths: {
+        lodash: './node_modules/lodash/lodash.js'
       }
     });
     System.import('app/main')
@@ -33,7 +37,7 @@
 <!-- 3. Display the application -->
 
 <body>
-  <my-app>Loading...</my-app>
+  <todo-app>Loading...</todo-app>
 </body>
 
 </html>
