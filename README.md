@@ -1,7 +1,12 @@
+## 项目运行
+1. `$ npm install -g tsd typescript`
+2. `$ npm install`
+3. `$ npm start`
+
 ## Learn Angular 2 Fundamentals
 这是我学习 Angular2 的项目，它涵盖了 Angular2 的一些基本概念，包括：组件（Component）、模型（Model）、服务（Service）、管道（Pipe）、传入传出（Input / Output）以及事件播散（EventEmitter）等使用方法，并介绍了项目的基本组织结构等。
 
-Anguar2 可使用 ES6 或 TypeScript 来编写，我这里默认使用了 TypeScript
+> Anguar2 可使用 ES6 或 TypeScript 来编写，我这里默认使用了 TypeScript。
 
 ### 1 Component
 组件中需要定义 selector 和 templete，即组件生效的标记和对应的 HTML 模板
@@ -97,3 +102,7 @@ bootstrap(TodoApp, [TodoService]);
 </ul>
 ```
 > 使用 ngFor 时需要在前加 * 号（* 号表示该动作将引起模板的变化），循环中的个体元素引用前需要添加 # 号，这些都是语法上的变化。
+
+## 参考链接
+* [Angular2 5 MIN Quickstart](https://angular.io/docs/ts/latest/quickstart.html)
+* [Angular 2 Fundaments](https://egghead.io/series/angular-2-fundamentals)
