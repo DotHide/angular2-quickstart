@@ -234,7 +234,7 @@ export class TodoList {
 ```
 这里表示从搜索框输入过来的值（前一个 term），被赋值到了 todo-list 的 `[term]` 属性中，并传递到 TodoList 类的输入项中去
 
-7 EventEmitter
+### 7 EventEmitter
 事件散播，又一个 Angular2 的新特性，用于将组件内部的事件向上散播，如：
 ```ts
 @Component({
