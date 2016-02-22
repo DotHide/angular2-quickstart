@@ -234,6 +234,28 @@ export class TodoList {
 ```
 这里表示从搜索框输入过来的值（前一个 term），被赋值到了 todo-list 的 `[term]` 属性中，并传递到 TodoList 类的输入项中去
 
+7 EventEmitter
+事件散播，又一个 Angular2 的新特性，用于将组件内部的事件向上散播，如：
+```ts
+@Component({
+  selector: 'todo-item-render',
+  template: `
+  <style>
+    .completed {
+      text-decoration: line-through;
+    }
+  </style>
+  <span [ngClass]="todo.status">{{ todo.title }}</span>
+  <button (click)="toggle.emit(todo)">Toggle</button>
+  `
+})
+export class TodoItemRender {
+  @Input() todo;
+  @Output() toggle = new EventEmitter();
+}
+```
+这里的 toggle 是 EventEmitter 对象，被声明为 Output 后，可以将按钮的 click 事件向上散播成为 todo-list 中该组件的 toggle 事件，其中的 `$event` 就是 TodoItemRender 类中声明的 todo（此 todo 又是来自外部输入），而后再触发 toggle 事件对应的业务逻辑。
+
 
 ## 参考链接
 * [Angular2 5 MIN Quickstart](https://angular.io/docs/ts/latest/quickstart.html)

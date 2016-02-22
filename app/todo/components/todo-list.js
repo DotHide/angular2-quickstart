@@ -45,7 +45,7 @@ System.register(["angular2/core", "../services/todo-service", "../components/tod
                         selector: 'todo-list',
                         pipes: [started_pipe_1.StartedPipe, search_pipe_1.SearchPipe],
                         directives: [todo_item_render_1.TodoItemRender],
-                        template: "<div>\n    <ul>\n      <li *ngFor=\"#todo of todoService.todos\n       | started : status \n       | search : term \">\n      <todo-item-render [todo]=\"todo\" (toggle)=\"todoService.toggleTodo($event)\">\n      </todo-item-render>\n      </li>\n    </ul>\n  </div>"
+                        template: "<div>\n    <ul>\n      <li *ngFor=\"#todo of todoService.todos\n       | started : status \n       | search : term \">\n      <todo-item-render [todo]=\"todo\" (toggle)=\"todoService.toggleTodo(todo)\">\n      </todo-item-render>\n      </li>\n    </ul>\n  </div>"
                     }), 
                     __metadata('design:paramtypes', [todo_service_1.TodoService])
                 ], TodoList);
