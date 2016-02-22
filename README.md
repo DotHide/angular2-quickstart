@@ -173,7 +173,7 @@ export class SearchPipe {
 })
 
 export class SearchPipe {
-  //增加 term 参数
+  // 增加 term 参数
   transform(items, [term]) {
     // 定义转换逻辑，用于结果输出，这里是筛选出以 s 字符开头的项目
     return value.filter((item) => {
@@ -220,7 +220,7 @@ import {Component, Input} from "angular2/core";
 })
 
 export class TodoList {
-  @Input() term; //定义该项是从外部输入的
+  @Input() term; // 定义该项是从外部输入的
   constructor(public todoService: TodoService) {
      
   }
@@ -231,8 +231,9 @@ export class TodoList {
 <search-box (update)="term = $event"></search-box>
 ...
 <todo-list [term]="term"></todo-list>
-```html
+```
 这里表示从搜索框输入过来的值（前一个 term），被赋值到了 todo-list 的 `[term]` 属性中，并传递到 TodoList 类的输入项中去
+
 
 ## 参考链接
 * [Angular2 5 MIN Quickstart](https://angular.io/docs/ts/latest/quickstart.html)
