@@ -1,4 +1,5 @@
-## 项目运行
+## Get Started
+请按以下姿势打开项目：
 1. `$ npm install -g tsd typescript`
 2. `$ npm install`
 3. `$ npm start`
