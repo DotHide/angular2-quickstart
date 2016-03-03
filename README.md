@@ -288,3 +288,4 @@ System.config({
 ## 参考链接
 * [Angular2 5 MIN Quickstart](https://angular.io/docs/ts/latest/quickstart.html)
 * [Angular 2 Fundaments](https://egghead.io/series/angular-2-fundamentals)
+* [Angular 2 Style Guide](https://github.com/mgechev/angular2-style-guide)
